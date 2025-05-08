@@ -81,26 +81,5 @@ const cats = [
         "id": 9
     }
 ]
-const catContainer = document.getElementById("cats");
 
-cats.forEach(function(item) {
-    let favourite = ""
-    let ageWord = "лет"
-    if (item.favourite) {
-        favourite = "★"
-    }
-    if (item.age === 1) {
-        ageWord = "год"
-    } else if (item.age <= 4) {
-        ageWord = "года"
-    }
-    const newElement = document.createElement("div")
-    newElement.innerHTML = `
-        <h2>${item.name} ${favourite}</h2>
-        <p>Возраст: ${item.age} ${ageWord}</p>
-        <p>Рейтинг: ${item.rate}</p>
-        <p>${item.description}</p>
-        <img src="${item.img_link}" alt="фотография кота" />
-    `
-    catContainer.insertAdjacentElement('beforeend', newElement);
-});
+export { cats }
